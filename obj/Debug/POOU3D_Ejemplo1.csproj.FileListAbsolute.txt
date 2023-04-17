@@ -1,0 +1,7 @@
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\bin\Debug\POOU3D_Ejemplo1.exe.config
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\bin\Debug\POOU3D_Ejemplo1.exe
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\bin\Debug\POOU3D_Ejemplo1.pdb
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\obj\Debug\POOU3D_Ejemplo1.csproj.AssemblyReference.cache
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\obj\Debug\POOU3D_Ejemplo1.csproj.CoreCompileInputs.cache
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\obj\Debug\POOU3D_Ejemplo1.exe
+C:\Users\ulise\source\repos\POOU3D_Ejemplo1\obj\Debug\POOU3D_Ejemplo1.pdb
