@@ -8,15 +8,19 @@ namespace POOU3D_Ejemplo1
         {
             //Crear la instancia
             Cuentas objeto1 = new Cuentas();
+            objeto1.Personalizar();
             //Mandar llamar los métodos
-            Console.WriteLine(objeto1.CalcularCosto2("Marcador TOP", 9, 10));
-            Console.WriteLine( objeto1.CalcularCosto(2,900));
-            objeto1.CalcularCosto1();
+            int resultadoMetodo = objeto1.CalcularCosto(2, 150);
+            string resultadoMetodo1 = objeto1.CalcularCosto2("Jabón Zote rosa de barra 250 gramos", 5, 15);
 
-            objeto1.AgregarEliminarCuenta();            
+            Console.WriteLine(resultadoMetodo);
+            Console.WriteLine(resultadoMetodo1);
+
+            //objeto1.AgregarEliminarCuenta();
             /*
-                +
-                - Nahomi
+                + Evelin, Karina
+                - Nahomi, Nahomi, Felix, Abraham, 
+            Erick, UMR, Hugo, HugoHugoHugoHugoHugoHugoHugoHugoHugoHugo
              */
             Console.ReadKey();
         }

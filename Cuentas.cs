@@ -24,7 +24,7 @@ namespace POOU3D_Ejemplo1
 
         public Cuentas()
         {
-            Console.Title = nombreBanco;
+            
         }
 
         //Metodo para crear o eliminar una cuenta 
@@ -42,8 +42,8 @@ namespace POOU3D_Ejemplo1
             {
                 Console.WriteLine("Se va a agregar o eliminar una cuenta para el cliente con RFC: {0}.", rfcCLiente);
                 Console.WriteLine("\n Selecciona la opción que desees ejecutar:");
-                Console.WriteLine("\t Presiona 1: Si deseas agregar una cuenta al cliente");
-                Console.WriteLine("\t Presiona 2: Si deseas Eliminar la cuenta al cliente");
+                Console.WriteLine("\t Presiona 1: Sí deseas Agregar una cuenta al cliente");
+                Console.WriteLine("\t Presiona 2: Sí deseas Eliminar la cuenta al cliente");
                 seleccionTecla = Console.ReadKey();
 
                 if (seleccionTecla.Key == ConsoleKey.D1)
@@ -71,6 +71,14 @@ namespace POOU3D_Ejemplo1
             Console.WriteLine("0");
         }
 
+        public void Personalizar() {
+            Console.Title = nombreBanco;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WindowHeight = 20;
+            Console.WindowWidth = 85;
+            Console.Clear();
+        }
 
 
     }
