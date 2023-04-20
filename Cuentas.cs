@@ -24,12 +24,18 @@ namespace POOU3D_Ejemplo1
 
         public Cuentas()
         {
-            
+
+        }
+
+        //Propiedad para cargar RFC
+        public string RFC {
+            set { rfcCLiente = value; }
         }
 
         //Metodo para crear o eliminar una cuenta 
         public bool AgregarEliminarCuenta() {
             //Variable de pulsacion de teclado
+            bool resultado;
             ConsoleKeyInfo seleccionTecla;
             Console.WriteLine("Adminiatración de cuentas.");
 
@@ -37,6 +43,7 @@ namespace POOU3D_Ejemplo1
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Error: Debes ingresar un RFC para dar de alta una cuenta.");
+                resultado = false;
             }
             else
             {
@@ -46,16 +53,22 @@ namespace POOU3D_Ejemplo1
                 Console.WriteLine("\t Presiona 2: Sí deseas Eliminar la cuenta al cliente");
                 seleccionTecla = Console.ReadKey();
 
-                if (seleccionTecla.Key == ConsoleKey.D1)
+                if (seleccionTecla.Key == ConsoleKey.D1 || seleccionTecla.Key == ConsoleKey.NumPad1)
                 {
-                    Console.WriteLine("Presionastye el número 1");
+                    Console.WriteLine("\n Se va a agregar una cuenta:");
+                    Console.WriteLine("\n \t Ingresa el número de cuenta.");
+                    numeroCuenta = Console.ReadLine();
+                    Console.WriteLine("\n \t ¿La cuenta tendrá algún saldo?.");
+                    saldoActual = Convert.ToDouble( Console.ReadLine());
                 }
                 if (seleccionTecla.Key == ConsoleKey.D2)
                 {
-                    Console.WriteLine("Presionastye el número 2");
+                    Console.WriteLine("\n Se eliminará la cuenta del cliente que tiene el RFC: {0}",rfcCLiente);
+                    numeroCuenta = string.Empty;                    
                 }
-            }                           
-            return false;
+                resultado = true;
+            }
+            return resultado;
         }
 
 
@@ -73,10 +86,12 @@ namespace POOU3D_Ejemplo1
 
         public void Personalizar() {
             Console.Title = nombreBanco;
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WindowHeight = 20;
-            Console.WindowWidth = 85;
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.BufferHeight = 30;
+            Console.BufferWidth = 1000;
+            Console.WindowHeight = 10;
+            Console.WindowWidth = 85;            
             Console.Clear();
         }
 
