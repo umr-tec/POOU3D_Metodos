@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Threading;
+using System.Media;
 
 namespace POOU3D_Ejemplo1
 {
     class Cuentas
-    {
+    {        
         //Campos - banco - cuenta - persona
         string nombreCliente, primerApellidoCliente, segundoApellidoCliente;
         string curpCliente, rfcCLiente, numeroCelularCliente, emailCliente;
@@ -67,6 +69,37 @@ namespace POOU3D_Ejemplo1
                     numeroCuenta = string.Empty;                    
                 }
                 resultado = true;
+            }
+            return resultado;
+        }
+
+        //Método para login
+        public bool LogIn() {
+            string user1 = "umr", user2, pass1 = "123", pass2;
+            bool resultado;
+
+            Console.WriteLine("Bienvenidos al sistema, sí deseseas ingresar, da de alta tus credecniales de acceso.");
+            Console.WriteLine("Ingresa tu usuario");
+            user2 = Console.ReadLine();
+            Console.WriteLine("Ingresa tu contraseña");
+            pass2 = Console.ReadLine();
+            if (user2 == user1 && pass2 == pass1)
+            {
+                Console.WriteLine("Accediendo al sistema.");
+                Thread.Sleep(1000);
+                Console.WriteLine("Accediendo al sistema..");
+                Thread.Sleep(1000);
+                Console.WriteLine("Accediendo al sistema...");
+                Thread.Sleep(1000);
+                Console.WriteLine("Accediendo al sistema....");
+
+                resultado = true;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("YA TE EQUIVOCASTE JA JA JA.");
+                resultado = false;
             }
             return resultado;
         }
