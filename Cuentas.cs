@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Media;
+using System.Speech.Synthesis;
 
 namespace POOU3D_Ejemplo1
 {
@@ -93,6 +93,11 @@ namespace POOU3D_Ejemplo1
                 Thread.Sleep(1000);
                 Console.WriteLine("Accediendo al sistema....");
 
+                SpeechSynthesizer speech = new SpeechSynthesizer();
+                speech.Volume = 100;                
+                speech.Speak("Ingresaste al sistema.");
+                speech.Rate = 10;
+                
                 resultado = true;
             }
             else

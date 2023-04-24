@@ -18,6 +18,7 @@ namespace POOU3D_Ejemplo1
             bool resultadoMetodo = objeto1.LogIn();
             if (resultadoMetodo == true)
             {
+                objeto1.RFC = "2345678i9o";
                 objeto1.AgregarEliminarCuenta();
             }
             /*
