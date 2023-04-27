@@ -14,12 +14,15 @@ namespace POOU3D_Ejemplo1
             //string resultadoMetodo1 = objeto1.CalcularCosto2("Jabón Zote rosa de barra 250 gramos", 5, 15);
             //Console.WriteLine(resultadoMetodo);
             //Console.WriteLine(resultadoMetodo1);
-
-            bool resultadoMetodo = objeto1.LogIn();
-            if (resultadoMetodo == true)
+           
+            if (objeto1.LogIn())
             {
                 objeto1.RFC = "2345678i9o";
-                objeto1.AgregarEliminarCuenta();
+                objeto1.Opciones();
+            }
+            else
+            {
+                Console.WriteLine("Sin acceso");
             }
             /*
                 + Evelin, Karina, Rocio

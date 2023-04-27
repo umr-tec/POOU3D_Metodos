@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Threading;
 using System.Speech.Synthesis;
+using System.Drawing;
 
 namespace POOU3D_Ejemplo1
 {
     class Cuentas
     {        
+        
         //Campos - banco - cuenta - persona
         string nombreCliente, primerApellidoCliente, segundoApellidoCliente;
         string curpCliente, rfcCLiente, numeroCelularCliente, emailCliente;
@@ -97,7 +99,7 @@ namespace POOU3D_Ejemplo1
                 speech.Volume = 100;                
                 speech.Speak("Ingresaste al sistema.");
                 speech.Rate = 10;
-                
+                //varieble de retorno ↓
                 resultado = true;
             }
             else
@@ -109,6 +111,43 @@ namespace POOU3D_Ejemplo1
             return resultado;
         }
 
+        //Metodo de menu de opciones
+        public void Opciones() {
+            //Variables para las opciones
+            string opcion, sesion = "activo";
+            Console.Clear();
+            while (sesion == "activo")
+            {                
+                Console.WriteLine("Menú de inicio.");
+                Console.WriteLine("Teclea la opción deseada:");
+                Console.WriteLine("1. Ver información del cliente.");
+                Console.WriteLine("2. Ver información cuenta del cliente.");
+                Console.WriteLine("3. Agregar o eliminar cuenta.");
+                Console.WriteLine("4. Salir.");
+                opcion = Console.ReadLine();
+
+                switch (opcion)
+                {
+                    case "1"://mandar llamar un metodo de infomacion del cliente
+                        Console.Clear();
+                        Console.WriteLine("Información del cliente");
+                        break;
+                    case "2":
+                        //mandar llamar un metodo de infomacion de cuenta
+                        Console.Clear();
+                        Console.WriteLine("Información de la cuenta");
+                        break;
+                    case "3":
+                        Console.Clear();
+                        AgregarEliminarCuenta();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Error, selecciona una opción válida");
+                        break;
+                }
+            }            
+        }
 
         //Miembro de tipo metodo
         public int CalcularCosto( int cantidadArticulos, int costoArticulos ) {
@@ -123,9 +162,9 @@ namespace POOU3D_Ejemplo1
         }
 
         public void Personalizar() {
-            Console.Title = nombreBanco;
-            Console.BackgroundColor = ConsoleColor.Yellow;
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Title = nombreBanco;            
+            Console.BackgroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.BufferHeight = 30;
             Console.BufferWidth = 1000;
             Console.WindowHeight = 10;
