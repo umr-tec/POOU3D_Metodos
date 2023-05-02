@@ -131,6 +131,7 @@ namespace POOU3D_Ejemplo1
                     case "1"://mandar llamar un metodo de infomacion del cliente
                         Console.Clear();
                         Console.WriteLine("Información del cliente");
+                        InformacionCliente();
                         break;
                     case "2":
                         //mandar llamar un metodo de infomacion de cuenta
@@ -141,12 +142,23 @@ namespace POOU3D_Ejemplo1
                         Console.Clear();
                         AgregarEliminarCuenta();
                         break;
+                    case "4":
+                        Console.Clear();
+                        break;
                     default:
                         Console.Clear();
                         Console.WriteLine("Error, selecciona una opción válida");
                         break;
                 }
             }            
+        }
+
+        //metodo para ver informacion del cliente
+        private void InformacionCliente() {
+            Console.WriteLine("Bienvenido al módulo de información de cleintes. del banco {0}.", nombreBanco);
+            Console.WriteLine("RFC del cliente: {0}.", rfcCLiente);
+            Console.WriteLine("Nombre del cliente: {0} {1} {2}", nombreCliente, primerApellidoCliente, segundoApellidoCliente);
+            Console.WriteLine("Datos de contacto del cliente: \n\t Teléfono Celular: {0}. \n\t Correo Electrónico: {1}.", numeroCelularCliente, emailCliente);
         }
 
         //Miembro de tipo metodo

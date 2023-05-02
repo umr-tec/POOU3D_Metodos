@@ -19,6 +19,7 @@ namespace POOU3D_Ejemplo1
             {
                 objeto1.RFC = "2345678i9o";
                 objeto1.Opciones();
+                
             }
             else
             {
