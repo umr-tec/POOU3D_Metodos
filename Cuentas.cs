@@ -136,7 +136,7 @@ namespace POOU3D_Ejemplo1
                     case "2":
                         //mandar llamar un metodo de infomacion de cuenta
                         Console.Clear();
-                        Console.WriteLine("Información de la cuenta");
+                        InformacionCuenta();
                         break;
                     case "3":
                         Console.Clear();
@@ -144,6 +144,7 @@ namespace POOU3D_Ejemplo1
                         break;
                     case "4":
                         Console.Clear();
+                        sesion = Salir();
                         break;
                     default:
                         Console.Clear();
@@ -159,6 +160,42 @@ namespace POOU3D_Ejemplo1
             Console.WriteLine("RFC del cliente: {0}.", rfcCLiente);
             Console.WriteLine("Nombre del cliente: {0} {1} {2}", nombreCliente, primerApellidoCliente, segundoApellidoCliente);
             Console.WriteLine("Datos de contacto del cliente: \n\t Teléfono Celular: {0}. \n\t Correo Electrónico: {1}.", numeroCelularCliente, emailCliente);
+        }
+
+        //metodo para ver informacion de LA CUENTA 
+        private void InformacionCuenta() {
+            Console.WriteLine("Bienvenido al módulo de información de cuentas bamcarias, del banco {0}.", nombreBanco);
+            //Saber si hay una cuenta cargada o no lo hay
+            if (string.IsNullOrEmpty(numeroCuenta))
+            {
+                //que no hay cuenta asignada
+                Console.WriteLine("Debes dar de alta una cuenta bancaria.");
+            }
+            else
+            {
+                //si hay una cuenta que mostrar
+                Console.WriteLine("El cliente con RFC: {0}, " +
+                    "tiene una cuenta con número: {1} y " +
+                    "tiene un saldo de: ${2}", rfcCLiente,numeroCuenta,saldoActual);
+            }
+        }
+
+        //metodo para Salir
+        private string Salir() {
+            ConsoleKeyInfo keyInfo;
+            string resultado = "activo";
+            Console.WriteLine("¿Estás seguro que deseas salir del sistema?");
+            Console.WriteLine("Presiona s si deseas salir. Presiona n si deseas continuar en el sistema");
+            keyInfo = Console.ReadKey();
+            if (keyInfo.Key == ConsoleKey.S)
+            {
+                resultado = "nactivo";
+            }
+            if (keyInfo.Key == ConsoleKey.N)
+            {
+                resultado = "activo";
+            }
+            return resultado;
         }
 
         //Miembro de tipo metodo
