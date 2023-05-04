@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.Speech.Synthesis;
-using System.Drawing;
 
 namespace POOU3D_Ejemplo1
 {
@@ -28,7 +27,6 @@ namespace POOU3D_Ejemplo1
 
         public Cuentas()
         {
-
         }
 
         //Propiedad para cargar RFC
@@ -37,7 +35,7 @@ namespace POOU3D_Ejemplo1
         }
 
         //Metodo para crear o eliminar una cuenta 
-        public bool AgregarEliminarCuenta() {
+        private bool AgregarEliminarCuenta() {
             //Variable de pulsacion de teclado
             bool resultado;
             ConsoleKeyInfo seleccionTecla;
@@ -185,7 +183,7 @@ namespace POOU3D_Ejemplo1
             ConsoleKeyInfo keyInfo;
             string resultado = "activo";
             Console.WriteLine("¿Estás seguro que deseas salir del sistema?");
-            Console.WriteLine("Presiona s si deseas salir. Presiona n si deseas continuar en el sistema");
+            Console.WriteLine("Presiona s si deseas salir. \n Presiona n si deseas continuar en el sistema");
             keyInfo = Console.ReadKey();
             if (keyInfo.Key == ConsoleKey.S)
             {
