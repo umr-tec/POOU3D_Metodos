@@ -5,8 +5,7 @@ using System.Speech.Synthesis;
 namespace POOU3D_Ejemplo1
 {
     class Cuentas
-    {        
-        
+    {
         //Campos - banco - cuenta - persona
         string nombreCliente, primerApellidoCliente, segundoApellidoCliente;
         string curpCliente, rfcCLiente, numeroCelularCliente, emailCliente;
@@ -24,14 +23,67 @@ namespace POOU3D_Ejemplo1
             this.numeroCelularCliente = numeroCelularCliente;
             this.emailCliente = emailCliente;
         }
-
         public Cuentas()
         {
         }
+        public Cuentas(string a)
+        {
+        }
+
 
         //Propiedad para cargar RFC
         public string RFC {
             set { rfcCLiente = value; }
+        }
+
+        //SOBRECARGA DE METODOS
+        //Método para actaulizar la informacion de un cliente
+
+        public void ActualizarInformacionCliente()
+        {
+
+        }
+
+        /// <summary>
+        /// Método para actualizar información del cliente.
+        /// </summary>
+        /// <param name="emailCliente"> Campo para ingresar una dirección de email valida: umr@user.com </param>
+        /// <param name="numeroCelularCliente"></param>
+        /// <param name="curpCliente"></param>
+        public void ActualizarInformacionCliente(string emailCliente, 
+            string numeroCelularCliente, string curpCliente) { 
+        
+        }
+
+        /// <summary>
+        /// Método para actualizar información del cliente.
+        /// </summary>
+        /// <param name="emailCliente">Introducir una dirección de email valida.  </param>
+        public void ActualizarInformacionCliente( string emailCliente)
+        {
+            Console.WriteLine("Módulo de actualización de información.");
+            Console.WriteLine("El Email registrado es: {0}.", emailCliente);
+            Console.WriteLine("Se actualizará la nueva dirección de email.");
+            Console.WriteLine("Actualizando.");
+            Thread.Sleep(600);
+            Console.WriteLine("Actualizando..");
+            Thread.Sleep(600);
+            Console.WriteLine("Actualización realizada con éxito.");
+            this.emailCliente = emailCliente;
+        }
+
+        public void ActualizarInformacionCliente(string emailCliente, string numeroCelularCliente)
+        {
+            Console.WriteLine("Módulo de actualización de información.");
+            Console.WriteLine("El Email registrado es: {0}.", emailCliente);
+            Console.WriteLine("Se actualizará la nueva dirección de email.");
+            Console.WriteLine("Actualizando.");
+            Thread.Sleep(600);
+            Console.WriteLine("Actualizando..");
+            Thread.Sleep(600);
+            Console.WriteLine("Actualización realizada con éxito.");
+            this.emailCliente = emailCliente;
+            this.numeroCelularCliente = numeroCelularCliente;
         }
 
         //Metodo para crear o eliminar una cuenta 
@@ -121,7 +173,8 @@ namespace POOU3D_Ejemplo1
                 Console.WriteLine("1. Ver información del cliente.");
                 Console.WriteLine("2. Ver información cuenta del cliente.");
                 Console.WriteLine("3. Agregar o eliminar cuenta.");
-                Console.WriteLine("4. Salir.");
+                Console.WriteLine("4. Actualizar información de un cliente.");
+                Console.WriteLine("5. Salir.");
                 opcion = Console.ReadLine();
 
                 switch (opcion)
@@ -129,7 +182,7 @@ namespace POOU3D_Ejemplo1
                     case "1"://mandar llamar un metodo de infomacion del cliente
                         Console.Clear();
                         Console.WriteLine("Información del cliente");
-                        InformacionCliente();
+                        InformacionCliente();                        
                         break;
                     case "2":
                         //mandar llamar un metodo de infomacion de cuenta
@@ -141,6 +194,9 @@ namespace POOU3D_Ejemplo1
                         AgregarEliminarCuenta();
                         break;
                     case "4":
+                        ActualizarInformacionCliente();
+                        break;
+                    case "5":
                         Console.Clear();
                         sesion = Salir();
                         break;
@@ -218,7 +274,5 @@ namespace POOU3D_Ejemplo1
             Console.WindowWidth = 85;            
             Console.Clear();
         }
-
-
     }
 }

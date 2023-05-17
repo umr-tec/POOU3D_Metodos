@@ -8,6 +8,9 @@ namespace POOU3D_Ejemplo1
         {
             //Crear la instancia
             Cuentas objeto1 = new Cuentas();
+            //Instanciar el objeto
+            Cuentas objetoDani = new Cuentas();
+            objetoDani.ActualizarInformacionCliente();
             objeto1.Personalizar();
             //Mandar llamar los métodos
             //int resultadoMetodo = objeto1.CalcularCosto(2, 150);
@@ -28,7 +31,7 @@ namespace POOU3D_Ejemplo1
                 + Evelin, Karina, Rocio
                 - Nahomi, Nahomi, Felix 3,Abraham, 
                  Erick, UMR, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo, Hugo
-                - Taniz
+                - Taniz, Nacho
              */
             Console.ReadKey();
         }
