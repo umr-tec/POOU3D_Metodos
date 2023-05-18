@@ -10,7 +10,7 @@ namespace POOU3D_Ejemplo1
             Cuentas objeto1 = new Cuentas();
             //Instanciar el objeto
             Cuentas objetoDani = new Cuentas();
-            objetoDani.ActualizarInformacionCliente();
+           
             objeto1.Personalizar();
             //Mandar llamar los métodos
             //int resultadoMetodo = objeto1.CalcularCosto(2, 150);

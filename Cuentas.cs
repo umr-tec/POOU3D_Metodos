@@ -37,12 +37,7 @@ namespace POOU3D_Ejemplo1
         }
 
         //SOBRECARGA DE METODOS
-        //Método para actaulizar la informacion de un cliente
-
-        public void ActualizarInformacionCliente()
-        {
-
-        }
+        //Método para actaulizar la informacion de un cliente       
 
         /// <summary>
         /// Método para actualizar información del cliente.
@@ -50,7 +45,7 @@ namespace POOU3D_Ejemplo1
         /// <param name="emailCliente"> Campo para ingresar una dirección de email valida: umr@user.com </param>
         /// <param name="numeroCelularCliente"></param>
         /// <param name="curpCliente"></param>
-        public void ActualizarInformacionCliente(string emailCliente, 
+        private void ActualizarInformacionCliente(string emailCliente, 
             string numeroCelularCliente, string curpCliente) { 
         
         }
@@ -59,7 +54,7 @@ namespace POOU3D_Ejemplo1
         /// Método para actualizar información del cliente.
         /// </summary>
         /// <param name="emailCliente">Introducir una dirección de email valida.  </param>
-        public void ActualizarInformacionCliente( string emailCliente)
+        private void ActualizarInformacionCliente( string emailCliente)
         {
             Console.WriteLine("Módulo de actualización de información.");
             Console.WriteLine("El Email registrado es: {0}.", emailCliente);
@@ -72,7 +67,12 @@ namespace POOU3D_Ejemplo1
             this.emailCliente = emailCliente;
         }
 
-        public void ActualizarInformacionCliente(string emailCliente, string numeroCelularCliente)
+        /// <summary>
+        /// Método para actualizar información del cliente.
+        /// </summary>
+        /// <param name="emailCliente">Introducir una dirección de email valida.</param>
+        /// <param name="numeroCelularCliente">Introducir un número de celular valido. Ej: 8713243700</param>
+        private void ActualizarInformacionCliente(string emailCliente, string numeroCelularCliente)
         {
             Console.WriteLine("Módulo de actualización de información.");
             Console.WriteLine("El Email registrado es: {0}.", emailCliente);
@@ -92,6 +92,7 @@ namespace POOU3D_Ejemplo1
             bool resultado;
             ConsoleKeyInfo seleccionTecla;
             Console.WriteLine("Adminiatración de cuentas.");
+            
 
             if (string.IsNullOrEmpty(rfcCLiente))//""
             {
@@ -194,7 +195,8 @@ namespace POOU3D_Ejemplo1
                         AgregarEliminarCuenta();
                         break;
                     case "4":
-                        ActualizarInformacionCliente();
+                        Console.Clear();
+                        ActualizarExpediente();
                         break;
                     case "5":
                         Console.Clear();
@@ -206,6 +208,42 @@ namespace POOU3D_Ejemplo1
                         break;
                 }
             }            
+        }
+
+        private void ActualizarExpediente() {
+            string nuevoEmail, nuevoCel, nuevaCurp, seleccion;
+            Console.WriteLine("Ingresa la información que desea modificar");
+            Console.WriteLine("1. Actualizar la dirección de email");
+            Console.WriteLine("2. Actualizar la dirección de email y número telefonico");
+            Console.WriteLine("3. Actualizar la dirección de email, número telefonico y CURP");
+            seleccion = Console.ReadLine();
+
+            switch (seleccion)
+            {
+                case "1":
+                    Console.WriteLine("Ingresa la nueva dirección de correo electrónico");
+                    nuevoEmail = Console.ReadLine();
+                    ActualizarInformacionCliente(nuevoEmail);
+                    break;
+                case "2":
+                    Console.WriteLine("Ingresa la nueva dirección de correo electrónico");
+                    nuevoEmail = Console.ReadLine();
+                    Console.WriteLine("Ingresa el nuevo número teléfonico");
+                    nuevoCel = Console.ReadLine();
+                    ActualizarInformacionCliente(nuevoEmail, nuevoCel);
+                    break;
+                case "3":
+                    Console.WriteLine("Ingresa la nueva dirección de correo electrónico");
+                    nuevoEmail = Console.ReadLine();
+                    Console.WriteLine("Ingresa el nuevo número teléfonico");
+                    nuevoCel = Console.ReadLine();
+                    Console.WriteLine("Ingresa la nueva CURP");
+                    nuevaCurp = Console.ReadLine();
+                    ActualizarInformacionCliente(nuevoEmail, nuevoCel, nuevaCurp);
+                    break;
+                default:
+                    break;
+            }
         }
 
         //metodo para ver informacion del cliente
